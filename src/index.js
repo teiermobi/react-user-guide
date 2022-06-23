@@ -275,6 +275,8 @@ class UserGuide extends Component {
     const { guides, guideKey } = this.props;
 
     win.localStorage.setItem(`userGuide-${guideKey}`, true);
+    win.dispatchEvent(new Event("storage"));
+    console.log("dispatched");
 
     this.setState({
       helpIndex: guides.length
